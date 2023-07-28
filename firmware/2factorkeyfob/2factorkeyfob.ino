@@ -22,6 +22,7 @@ void setup() {
   radio.updateSettings();
   radio.txBegin();
   radio.setTransmitPower(20, PA_MODE_PA1_PA2_20dbm, OCP_OFF);
+  radio.setFrequencyMHz(433.92); //change jamming frequency here
   radio.readAllRegs();
   pinMode(2, OUTPUT);
   digitalWrite(2, HIGH);
