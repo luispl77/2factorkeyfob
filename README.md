@@ -1,7 +1,8 @@
 # 2-Factor Key Fob Board
 
 This repository contains all the necessary information and design files for a custom board designed to provide a 2-factor entry system for vehicles. The board incorporates an ESP8266 and an RFM69HW radio module, and its primary goal is to enhance vehicle security by jamming all key signals near the car. The jammer can be disabled by accessing the Access Point (AP) created by the ESP8266 and accessing the web server at the IP address 69.69.69.69, where there is a button on the web page to disable the jammer manually.
-The 2-Factor Key Fob project aims to enhance vehicle security by adding a two-factor authentication system to the standard key fob. By utilizing an ESP8266 and an RFM69HW radio module, the key fob can jam all key signals near the car, preventing unauthorized access. To disable the jammer, users can connect to the ESP8266's Access Point and access the web server hosted at IP address 69.69.69.69, which allows the user to disable the jammer.
+
+The goal of this project is to make it impossible for a thief to open a vehicle using the stolen key fob. The thief would need to know the series of steps to deactivate the jammer, along with the AP's password, creating a two-factor system. Note that the thief might be able to use the mechanical key in the key fob, so some aditional thought would need to be added, to make it truly impossible for a thief to (non-destructively) enter the vehicle with the key.
 
 ![image](https://github.com/luispl77/2factorkeyfob/assets/81360502/eeb82920-18ce-409a-95a3-c509b7b5a05f)
 
