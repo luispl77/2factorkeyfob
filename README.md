@@ -63,8 +63,6 @@ This firmware controls the behavior of the key fob, allowing users to jam key si
 
 5. Conversely, when the jammer is deactivated, GPIO4 is set low to turn off the jamming signal, and GPIO2 is set high to power on the green LED, indicating the jammer is inactive.
 
-**Note:** Ensure that the provided pin mappings (CS_R and DIO2_R) match the actual pin connections on the custom board. Additionally, consider modifying the output4 (GPIO4) and 2 (GPIO2) pin assignments if needed based on the specific hardware configuration. The firmware is written for the Arduino IDE and can be easily uploaded to the ESP8266 microcontroller.
-
 
 ## Contact me
 
