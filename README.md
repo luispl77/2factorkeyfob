@@ -26,7 +26,7 @@ This version is very simply switching the jammer OFF periodically (~15 sec, depe
 
 ![image](https://github.com/luispl77/2factorkeyfob/assets/81360502/536c1ec9-6116-45b4-8d5d-ce6e3e6f8175)
 
-Some other possible builds would substituting the FS1000A for the RFM69HW. Note that the jamming power of the FS1000A is significantly lower to the RFM69HW.
+Some other possible builds would be substituting the FS1000A for the RFM69HW. Note that the jamming power of the FS1000A is significantly lower to the RFM69HW.
 
 ## Firmware
 
