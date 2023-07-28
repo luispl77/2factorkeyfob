@@ -15,13 +15,18 @@ The "hardware" directory contains all the design files necessary for manufacturi
 You can choose to build 3+ versions of this board, with different features:
 ### Build 1: ESP8266 + RFM69HW 
 This is the recommended build.
+
 ![image](https://github.com/luispl77/2factorkeyfob/assets/81360502/c47348b1-75ef-43fd-ae79-6114c2d5e851)
 ### Build 2: ESP8266 + RFM69HW + 555 timer
 The 555 timer circuit combined with the MOSFET adds a periodic (~2 min depending on the resistor values RA and RB) switch to the power of the board, as a redundancy mechanism. The periodic reset is a nice touch to Build 1, but not needed.
+
 ![image](https://github.com/luispl77/2factorkeyfob/assets/81360502/d400cf27-3fcb-420c-869c-0e0b0cded81a)
 ### Build 3: 555 timer + FS1000A 
 This version is very simply switching the jammer OFF periodically (~15 sec, depending on resistor values) for ~1 sec, allowing the user to look at the indicator LED to know exacly when to press the key fob. This mechanism is weaker because an attacker can just repeatedly use the key fob and get a lucky click inside the ~1 sec window.
+
 ![image](https://github.com/luispl77/2factorkeyfob/assets/81360502/536c1ec9-6116-45b4-8d5d-ce6e3e6f8175)
+
+Some other possible builds would substituting the FS1000A for the RFM69HW. Note that the jamming power of the FS1000A is significantly lower to the RFM69HW.
 
 ## Firmware
 
