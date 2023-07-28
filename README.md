@@ -5,6 +5,9 @@ The 2-Factor Key Fob project aims to enhance vehicle security by adding a two-fa
 
 ![WhatsApp Image 2023-07-28 at 23 09 05](https://github.com/luispl77/2factorkeyfob/assets/81360502/a04371ca-98d2-49d9-993f-6a3bc589fb11)
 
+## Demo
+
+https://www.youtube.com/watch?v=CixVvEEoNlQ
 
 ## Hardware
 ![image](https://github.com/luispl77/2factorkeyfob/assets/81360502/5efef5d2-6ad4-40b3-922d-d6b00389254c)
@@ -31,10 +34,6 @@ Some other possible builds would be substituting the RFM69HW for the FS1000A. No
 ## Firmware
 
 The "firmware" directory contains the code required to run on the ESP8266 microcontroller. It depends on the [RFM69LPL library](https://github.com/luispl77/RFM69LPL), which is my custom made RFM69 module library, and is mantained by me. Make sure to include this library in Arduino IDE in order to compile and upload to the ESP8266.
-
-## Demo
-
-https://www.youtube.com/watch?v=CixVvEEoNlQ
 
 ## Contact me
 
