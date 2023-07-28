@@ -41,26 +41,29 @@ This firmware controls the behavior of the key fob, allowing users to jam key si
 
 (AI generated:)
 
-Key Features:
+This firmware controls the behavior of the key fob, allowing users to jam key signals near the car when they leave the vehicle and to disable the jammer when needed. The key fob creates an Access Point (AP) and a web server, accessible through the AP, to enable or disable the jammer.
 
-    Jammer Control: The firmware sets up and controls the RFM69HW radio module to act as the key signal jammer. The frequency can be customized by changing the value in the line radio.setFrequencyMHz(433.92); to suit the jamming requirements.
+### Key Features:
 
-    Web Server & AP: The ESP8266 creates a WiFi Access Point (AP) with the SSID "iPhone de Maria" and password "12345678". Users can connect their smartphones or computers to this AP and access the built-in web server hosted at IP address 69.69.69.69. The web server provides an intuitive interface to enable or disable the jammer using buttons.
+1. **Jammer Control:** The firmware sets up and controls the RFM69HW radio module to act as the key signal jammer. The frequency can be customized by changing the value in the line `radio.setFrequencyMHz(433.92);` to suit the jamming requirements.
 
-    EEPROM Memory: The firmware utilizes the EEPROM library to store the state of the jammer (active or inactive) in the memory location 0x00. The function retrieveState() reads this memory location during startup to determine the previous state of the jammer.
+2. **Web Server & AP:** The ESP8266 creates a WiFi Access Point (AP) with the SSID "iPhone de Maria" and password "12345678". Users can connect their smartphones or computers to this AP and access the built-in web server hosted at IP address 69.69.69.69. The web server provides an intuitive interface to enable or disable the jammer using buttons.
 
-Functionality:
+3. **EEPROM Memory:** The firmware utilizes the EEPROM library to store the state of the jammer (active or inactive) in the memory location 0x00. The function `retrieveState()` reads this memory location during startup to determine the previous state of the jammer.
 
-    The firmware initializes the RFM69HW radio module with the specified frequency and transmit power settings to act as the jammer. It sets up the WiFi AP and web server for user interaction.
+### Functionality:
 
-    During startup, the firmware checks the EEPROM memory location 0x00 to retrieve the previous state of the jammer. If the state is "1", it indicates that the jammer was previously active, and it proceeds to activate the jammer again. Otherwise, it provides a 60-second delay, allowing the user to lock the vehicle before the jammer is activated.
+1. The firmware initializes the RFM69HW radio module with the specified frequency and transmit power settings to act as the jammer. It sets up the WiFi AP and web server for user interaction.
 
-    When a user connects to the ESP8266's AP and accesses the web server, the firmware responds to HTTP GET requests for turning the jammer on or off. When the jammer is activated or deactivated, the corresponding state is stored in the EEPROM memory, ensuring the jammer retains its state even after power cycling.
+2. During startup, the firmware checks the EEPROM memory location 0x00 to retrieve the previous state of the jammer. If the state is "1", it indicates that the jammer was previously active, and it proceeds to activate the jammer again. Otherwise, it provides a 60-second delay, allowing the user to lock the vehicle before the jammer is activated.
 
-    The web server's user interface provides buttons to toggle the jammer state. When the jammer is active, the ESP8266 sets output pin 4 (GPIO4) high, initiating the jamming process. It also sets GPIO2 low to power off the green LED, indicating the jammer is active.
+3. When a user connects to the ESP8266's AP and accesses the web server, the firmware responds to HTTP GET requests for turning the jammer on or off. When the jammer is activated or deactivated, the corresponding state is stored in the EEPROM memory, ensuring the jammer retains its state even after power cycling.
 
-    Conversely, when the jammer is deactivated, GPIO4 is set low to turn off the jamming signal, and GPIO2 is set high to power on the green LED, indicating the jammer is inactive.
+4. The web server's user interface provides buttons to toggle the jammer state. When the jammer is active, the ESP8266 sets output pin 4 (GPIO4) high, initiating the jamming process. It also sets GPIO2 low to power off the green LED, indicating the jammer is active.
 
+5. Conversely, when the jammer is deactivated, GPIO4 is set low to turn off the jamming signal, and GPIO2 is set high to power on the green LED, indicating the jammer is inactive.
+
+**Note:** Ensure that the provided pin mappings (CS_R and DIO2_R) match the actual pin connections on the custom board. Additionally, consider modifying the output4 (GPIO4) and 2 (GPIO2) pin assignments if needed based on the specific hardware configuration. The firmware is written for the Arduino IDE and can be easily uploaded to the ESP8266 microcontroller.
 
 
 ## Contact me
