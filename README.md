@@ -63,9 +63,9 @@ This firmware controls the behavior of the key fob, allowing users to jam key si
 
 3. When a user connects to the ESP8266's AP and accesses the web server, the firmware responds to HTTP GET requests for turning the jammer on or off. When the jammer is activated or deactivated, the corresponding state is stored in the EEPROM memory, ensuring the jammer retains its state even after power cycling.
 
-4. The web server's user interface provides buttons to toggle the jammer state. When the jammer is active, the ESP8266 sets output pin 4 (GPIO4) high, initiating the jamming process. It also sets GPIO2 low to power off the green LED, indicating the jammer is active.
+4. The web server's user interface provides buttons to toggle the jammer state. When the jammer is active, the ESP8266 sets output pin 4 (GPIO4) high, initiating the jamming process. It also sets GPIO2 low to power off the onboard LED, indicating the jammer is active.
 
-5. Conversely, when the jammer is deactivated, GPIO4 is set low to turn off the jamming signal, and GPIO2 is set high to power on the green LED, indicating the jammer is inactive.
+5. Conversely, when the jammer is deactivated, GPIO4 is set low to turn off the jamming signal, and GPIO2 is set high to power on the onboard LED, indicating the jammer is inactive.
 
 
 ## Contact me
