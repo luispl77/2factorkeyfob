@@ -47,8 +47,6 @@ This firmware controls the behavior of the key fob, allowing users to jam key si
 
 (AI generated:)
 
-This firmware controls the behavior of the key fob, allowing users to jam key signals near the car when they leave the vehicle and to disable the jammer when needed. The key fob creates an Access Point (AP) and a web server, accessible through the AP, to enable or disable the jammer.
-
 ### Key Features:
 
 1. **Jammer Control:** The firmware sets up and controls the RFM69HW radio module to act as the key signal jammer. The frequency can be customized by changing the value in the line `radio.setFrequencyMHz(433.92);` to suit the jamming requirements.
